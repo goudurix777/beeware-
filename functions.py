@@ -24,18 +24,3 @@ def scraped_data(url_topull):
     print("Data pull done")
     return text
 
-"""
-def gensim_function(widget):
-    text_input = scraped_data(self.url)
-    text_size = float(length_value.value)
-    gen_sum = summarize(text_input,ratio=text_size)
-    f_summary.value = gen_sum
-    return
-    
-def summa_function(widget):
-    text_input = scraped_data(self.url)
-    text_size = float(length_value.value)
-    gen_sum = summarizer.summarize(text_input,ratio=text_size)
-    f_summary.value = gen_sum
-    return
-"""
