@@ -11,7 +11,7 @@ nltk.download("stopwords")
 from nltk import word_tokenize, sent_tokenize
 import heapq
 import logging
-#from summarizer.functions import scraped_data
+from summarizer.functions import scraped_data
 logging.basicConfig(format = '%(asctime)sw : %(levelname)s : %(message)s', level = logging.INFO)
 from gensim.summarization import summarize
 from gensim.summarization import keywords
@@ -58,18 +58,6 @@ class TextSummarizer(toga.App):
         self.url = Url_link.value
         length_value = toga.TextInput()
         f_summary = toga.TextInput(readonly = True)
-        
-        def scraped_data(url_topull):
-            scraped_data = urllib.request.urlopen(url_topull)
-            article = scraped_data.read()
-            parsed_article = bs.BeautifulSoup(article,'html')
-            paragraphs = parsed_article.find_all('p')
-            article_text = ""
-            for p in paragraphs:
-                article_text += p.text
-            text = article_text
-            print("Data pull done")
-            return text
         
         def gensim_function(widget):
             text_input = scraped_data(Url_link.value)
